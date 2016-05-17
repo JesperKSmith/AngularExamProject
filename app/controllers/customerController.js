@@ -62,7 +62,7 @@ controller("customerController",
             }
         ];
 
-        customerApiService.getCustomers().then(function(costumers) {
+        customerApiService.getCustomers().then(function(customers) {
             $scope.localCustomers = customers;
         }, function(error) {
             console.log(error);

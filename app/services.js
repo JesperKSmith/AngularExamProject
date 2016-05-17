@@ -14,7 +14,7 @@ angular.module("doggycloud").factory("customerApiService", function($q, $state, 
     return {
         getCustomers: function () {
 
-            customersResource.query(
+            customerResource.query(
                 function (data) {
                     customers = data;
                     deferred.resolve(customers);
