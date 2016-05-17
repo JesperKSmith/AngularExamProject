@@ -28,8 +28,8 @@ angular.module('doggycloud')
 
             .state('animal-table', {
                 url: '/dyr',
-                templateUrl: 'app/partials/animalTable.html'
-                //controller: 'animalController'
+                templateUrl: 'app/partials/animalTable.html',
+                controller: 'animalController'
             })
 
     });
