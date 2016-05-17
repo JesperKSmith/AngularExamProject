@@ -1,0 +1,21 @@
+{
+  "name": "mandatory2-doggycloud",
+  "version": "1.0.0",
+  "description": "angular selective mandatory 2 doggycloud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular",
+    "node",
+    "doggycloud"
+  ],
+  "author": "Christian Vang, Jesper Smith, Nikolas Dalton, Thomas Rasmussen",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.1.0",
+    "jshint": "^2.9.2"
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="doggycloud">
+<head>
+    <meta charset="UTF-8">
+    <title>DoggyCloud</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+
+    <script>
+        angular.module("doggycloud", ['ui.router', 'ngResource']);
+    </script>
+
+    <!--<script src="app/controllers/customerController.js"></script>-->
+
+
+    <script src="app/navigation.js"></script>
+
+</head>
+<body>
+
+    <div ui-view=""></div>
+    <!--Ovenstående redirecter til kunde view gennem navigation.js-->
+
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+
+
+</body>
+</html>

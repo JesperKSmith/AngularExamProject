@@ -1,0 +1,32 @@
+{
+  "name": "mandatory2-doggycloud",
+  "description": "angular selective mandatory 2 doggycloud",
+  "main": "index.js",
+  "authors": [
+    "Christian Vang",
+    "Jesper Smith",
+    "Nikolas Dalton",
+    "Thomas Rasmussen"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "node",
+    "doggycloud"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-resource": "^1.5.5",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6",
+    "underscore": "^1.8.3"
+  }
+}
