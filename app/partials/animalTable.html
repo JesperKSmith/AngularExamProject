@@ -18,8 +18,8 @@ animal table
             <th>Comments</th>
         </tr>
     </thead>
-    <tbody>
-        <tr ng-repeat="animals in dummyAnimals">
+    <tbody ng-repeat="customer in dummyCustomers">
+            <tr ng-repeat="animals in customer.animals">
             <td>{{animals.name}}</td>
             <td>{{animals.breed}}</td>
             <td>{{animals.gender}}</td>
