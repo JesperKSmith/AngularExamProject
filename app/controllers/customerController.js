@@ -1,9 +1,12 @@
 angular.module("doggycloud").
 controller("customerController",
-    function($scope, $state, $http, $resource) {
+    function($scope, $state, $http, $resource, customerApiService) {
         $scope.customer = {};
 
         var today = new Date();
+
+        $scope.localCustomers = [];
+
         $scope.dummyCustomers = [
             {
                 name: "Torben",
@@ -59,18 +62,11 @@ controller("customerController",
             }
         ];
 
-        $scope.saveCustomer = function() {
-            if ($scope.animalForm.$valid) {
-                var fakedResponse = {
-                    error: "Fake confirm from server"
-                };
-
-                $scope.serverResponse = fakedResponse;
-            }
-            else {
-                alert("Fejl i formularen");
-            }
-        };
+        customerApiService.getCustomers().then(function(costumers) {
+            $scope.localCustomers = customers;
+        }, function(error) {
+            console.log(error);
+        });
     });
 
 

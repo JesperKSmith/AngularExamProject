@@ -18,8 +18,8 @@ animal table
             <th>Comments</th>
         </tr>
     </thead>
-    <tbody ng-repeat="customer in dummyCustomers">
-            <tr ng-repeat="animals in customer.animals">
+    <tbody ng-repeat="customer in localCustomers">
+            <tr ng-repeat="animals in customer.animals" data-toggle="collapse" data-target="#demo">
             <td>{{animals.name}}</td>
             <td>{{animals.breed}}</td>
             <td>{{animals.gender}}</td>
@@ -31,6 +31,11 @@ animal table
 
 
         </tr>
+
+    <tr id="demo" class="collapse">
+        <td>{{customer.name}}</td>
+        <td>{{customer.address}}</td>
+    </tr>
 
     </tbody>
 
