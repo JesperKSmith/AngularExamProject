@@ -1,6 +1,44 @@
-<span ui-sref="customer-table" class="label label-info">Info</span>
+<form novalidate name="customerForm" ng-submit="saveCustomer()" >
+    <div class="fontColoring">
+        <div class="Name">
+            <li>Kunde navn:</li>
+            <input type="text" name="name" class="fieldText" required ng-model="customer.name" />
+            <span class="fontError" ng-show="customerForm.name.$error.required && customerForm.$submitted">
+                Kunde navn er påkrævet
+            </span>
+        </div>
 
-<div class="table table-hover" ng-repeat="item in localAnimals"></div>
+        <div class="Address">
+            <li>Adresse:</li>
+            <div class="noteText">Eksempel: Nørrebrogade 24, st.th, 2450 København K</div>
+            <input class="fieldText" type="text" name="address" required ng-model="customer.address">
+            <span class="fontError" ng-show="customerForm.address.$error.required && customerForm.$submitted">
+                Adresse er påkrævet
+            </span>
+        </div>
 
-<!--{{item.value1}} {{item.value2}} {{item.value3}} {{item.value4}} {{item.value5}} {{item.value6}} {{item.value7}} {{item.value8}} {{item.value9}} -->
+        <div class="Phone">
+            <li>Telefon nummer:</li>
+            <input class="fieldText" type="text" name="phone" required ng-model="customer.phone">
+            <span class="fontError" ng-show="customerForm.phone.$error.required && customerForm.$submitted">
+                Telefon nummer er påkrævet
+            </span>
+        </div>
+
+        <div class="Email">
+            <li>E-Mail</li>
+            <input class="fieldText" type="text" name="email" required ng-model="customer.email">
+            <span class="fontError" ng-show="customerForm.email.$error.required && customerForm.$submitted">
+                E-Mail er påkrævet
+            </span>
+        </div>
+
+    </div>
+    <p>
+        <br>
+        <button type="submit" class="btn btn-info centering glyphicon glyphicon-ok" value="Submit"> Opret Kunde</button>
+        <button ng-click="deleteCustomer()" type="button" class="btn btn-danger glyphicon glyphicon-trash"> Slet Kunde </button>
+</form>
+
+<div ui-view></div>
 

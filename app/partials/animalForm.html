@@ -1,1 +1,78 @@
 animal form
+<form novalidate name="animalForm" ng-submit="saveAnimal()" >
+    <div class="fontColoring">
+        <div class="Name">
+            <li>Dyrets navn:</li>
+            <input type="text" name="name" class="fieldText" required ng-model="animal.name" />
+            <span class="fontError" ng-show="animalForm.name.$error.required && animalForm.$submitted">
+                "Dyrets navn" er påkrævet
+            </span>
+        </div>
+
+        <div class="Breed">
+            <li>Race:</li>
+            <input class="fieldText" type="text" name="breed" required ng-model="animal.breed">
+            <span class="fontError" ng-show="animalForm.breed.$error.required && animalForm.$submitted">
+                "Race" er påkrævet
+            </span>
+        </div>
+
+        <div class="Gender">
+            <li>Køn:</li>
+            <input class="fieldText" type="text" name="gender" required ng-model="animal.gender">
+            <span class="fontError" ng-show="animalForm.gender.$error.required && animalForm.$submitted">
+                "Køn" er påkrævet
+            </span>
+        </div>
+
+        <div class="Age">
+            <li>Alder:</li>
+            <input class="fieldText" type="text" name="age" required ng-model="animal.age">
+            <span class="fontError" ng-show="animalForm.age.$error.required && animalForm.$submitted">
+                "Alder" er påkrævet
+            </span>
+        </div>
+        <!--name: "Fido", breed: "Goldeno Retrievo", gender: "Male",-->
+        <!--age: 5, inHeat: "Yes", lastVaccine: today,-->
+        <!--bestAlone: "No", pictures: "N/A", comments: "Good dog"-->
+        <div class="InHeat">
+            <li>I løbetid:</li>
+            <input class="fieldText" type="text" name="inHeat" required ng-model="animal.inHeat">
+            <span class="fontError" ng-show="animalForm.inHeat.$error.required && animalForm.$submitted">
+                "I løbetid" er påkrævet
+            </span>
+        </div>
+
+        <div class="BestAlone">
+            <li>Bedst alene:</li>
+            <input class="fieldText" type="text" name="bestAlone" required ng-model="animal.bestAlone">
+            <span class="fontError" ng-show="animalForm.bestAlone.$error.required && animalForm.$submitted">
+                "Bedst alene" er påkrævet
+            </span>
+        </div>
+
+        <div class="Pictures">
+            <li>Billeder:</li>
+            <input class="fieldText" type="text" name="pictures" required ng-model="animal.pictures">
+            <!--<span class="fontError" ng-show="animalForm.pictures.$error.required && animalForm.$submitted">-->
+                <!--"Billeder" er påkrævet-->
+            <!--</span>-->
+        </div>
+
+        <div class="Comments">
+            <li>Kommentare:</li>
+            <!--<input class="fieldText" type="textfield" name="comments" required ng-model="animal.comments">-->
+            <textarea class="fieldText" name="comments" rows="10" cols="21" ng-model="animal.comments"></textarea>
+            <!--<span class="fontError" ng-show="animalForm.comments.$error.required && animalForm.$submitted">-->
+                <!--"I løbetid" er påkrævet-->
+            <!--</span>-->
+        </div>
+    </div>
+    <p>
+        <br>
+        <button type="submit" class="btn btn-info centering glyphicon glyphicon-ok" value="Submit"> Opret Dyr</button>
+        <button ng-click="deleteCustomer()" type="button" class="btn btn-danger glyphicon glyphicon-trash"> Slet Dyr </button>
+</form>
+
+<div ui-view></div>
+
