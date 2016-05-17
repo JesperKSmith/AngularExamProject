@@ -1,9 +1,12 @@
 angular.module("doggycloud").
 controller("customerController",
-    function($scope, $state, $http, $resource, animalApiService) {
+    function($scope, $state, $http, $resource, customerApiService) {
         $scope.customer = {};
 
         var today = new Date();
+
+        $scope.localCustomers = [];
+
         $scope.dummyCustomers = [
             {
                 name: "Torben",
@@ -13,13 +16,13 @@ controller("customerController",
                 animals:
                 [
                     {
-                        name: "Fido", breed: "Goldeno Retrievo", sex: "Male",
-                        Age: 5, inHeat: "Yes", lastVaccine: today,
+                        name: "Fido", breed: "Goldeno Retrievo", gender: "Male",
+                        age: 5, inHeat: "Yes", lastVaccine: today,
                         bestAlone: "No", pictures: "N/A", comments: "Good dog"
                     },
                     {
-                        name: "Misser", breed: "Norsk Skovkat", sex: "Female",
-                        Age: 3, inHeat: "No", lastVaccine: today,
+                        name: "Misser", breed: "Norsk Skovkat", gender: "Female",
+                        age: 3, inHeat: "No", lastVaccine: today,
                         bestAlone: "No", pictures: "N/A", comments: "Good cat"
                     }
                 ]
@@ -33,12 +36,12 @@ controller("customerController",
                 [
                     {
                         name: "Muggi", breed: "Labrador",
-                        sex: "Female", Age: 10, inHeat: "Yes", lastVaccine: today,
+                        gender: "Female", age: 10, inHeat: "Yes", lastVaccine: today,
                         bestAlone: "No", pictures: "N/A", comments: "Bad dog"
                     },
                     {
                         name: "Magdalene", breed: "Chihuahua",
-                        sex: "Female", Age: 34, inHeat: "No", lastVaccine: today,
+                        gender: "Female", age: 34, inHeat: "No", lastVaccine: today,
                         bestAlone: "No", pictures: "N/A", comments: "Old dog"
                     }
                 ]
@@ -52,25 +55,18 @@ controller("customerController",
                 [
                     {
                         name: "Don Carnage", breed: "Fox",
-                        sex: "Male", Age: 4, inHeat: "Yes", lastVaccine: today,
+                        gender: "Male", age: 4, inHeat: "Yes", lastVaccine: today,
                         bestAlone: "Yes", pictures: "N/A", comments: "Its a fox"
                     }
                 ]
             }
         ];
 
-        $scope.saveCustomer = function() {
-            if ($scope.animalForm.$valid) {
-                var fakedResponse = {
-                    error: "Fake confirm from server"
-                };
-
-                $scope.serverResponse = fakedResponse;
-            }
-            else {
-                alert("Fejl i formularen");
-            }
-        };
+        customerApiService.getCustomers().then(function(customers) {
+            $scope.localCustomers = customers;
+        }, function(error) {
+            console.log(error);
+        });
     });
 
 

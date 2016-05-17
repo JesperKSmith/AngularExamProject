@@ -13,19 +13,17 @@ animal table
             <th>Gender</th>
             <th>Age</th>
             <th>In Heat</th>
-            <th>Last Vaccine</th>
             <th>Best Alone</th>
             <th>Comments</th>
         </tr>
     </thead>
-    <tbody>
-        <tr ng-repeat="animals in dummyAnimals">
+    <tbody ng-repeat="customer in localCustomers">
+            <tr ng-repeat="animals in customer.animals">
             <td>{{animals.name}}</td>
             <td>{{animals.breed}}</td>
             <td>{{animals.gender}}</td>
             <td>{{animals.age}}</td>
             <td>{{animals.inHeat}}</td>
-            <td>{{animals.lastVaccine}}</td>
             <td>{{animals.bestAlone}}</td>
             <td>{{animals.comments}}</td>
 
