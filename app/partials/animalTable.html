@@ -18,18 +18,23 @@ animal table
         </tr>
     </thead>
     <tbody ng-repeat="customer in localCustomers">
-            <tr ng-repeat="animals in customer.animals">
-            <td>{{animals.name}}</td>
-            <td>{{animals.breed}}</td>
-            <td>{{animals.gender}}</td>
-            <td>{{animals.age}}</td>
-            <td>{{animals.inHeat}}</td>
-            <td>{{animals.bestAlone}}</td>
-            <td>{{animals.comments}}</td>
+    <tr ng-repeat="animals in customer.animals" data-toggle="collapse" data-target="#{{customer._id}}">
+        <td>{{animals.name}}</td>
+        <td>{{animals.breed}}</td>
+        <td>{{animals.gender}}</td>
+        <td>{{animals.age}}</td>
+        <td>{{animals.inHeat}}</td>
+        <td>{{animals.bestAlone}}</td>
+        <td>{{animals.comments}}</td>
 
 
-        </tr>
-
+    </tr>
+    <tr id="{{customer._id}}" class="collapse">
+        <td><span class="collapseStyle">Name</span><hr>{{customer.name}}</td>
+        <td><span class="collapseStyle">Address</span><hr>{{customer.address}}</td>
+        <td><span class="collapseStyle">Telephone</span><hr>{{customer.telephone}}</td>
+        <td><span class="collapseStyle">Email</span><hr>{{customer.email}}</td>
+    </tr>
     </tbody>
 
 </table>
