@@ -1,8 +1,30 @@
+customer table
+
 <span ui-sref="customer-form" class="label label-success">Customer Form</span>
 <span ui-sref="animal-form" class="label label-danger">Animal Form</span>
 <span ui-sref="animal-table" class="label label-warning">Animal Table</span>
 
-<div class="table table-hover" ng-repeat="item in localCustomers"></div>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Telephone</th>
+        <th>Email</th>
+        <th class="text-center">Info</th>
+    </tr>
+    </thead>
+    <tbody ng-repeat="customer in dummyCustomers">
+    <tr data-toggle="collapse" data-target="#{{customer._id}}" class="infoColumn">
+        <td class="col-md-1 tableContent"><div>{{customer.name}}</div></td>
+        <td class="col-md-2 tableContent"><div>{{customer.address}}</div></td>
+        <td class="col-md-1 tableConeten"><div>{{customer.telephone}}</div></td>
+        <td class="col-md-1 tableContent"><div>{{customer.email}}</div></td>
+        <td class="col-md-1 text-center infoColor"><div><button type="button" class="btn btn-link"><i class="glyphicon glyphicon-info-sign"></i></button></div></td>
+    </tr>
+    <tr id="{{customer._id}}" class="collapse customerCollapse">
+        <td><span class="collapseStyle tableContent">Animals</span><hr><div ng-repeat="animals in customer.animals" class="collapseContent">{{animals.name}}</div></td>
+    </tr>
+    </tbody>
 
-<!--{{item.value1}} {{item.value2}} {{item.value3}} {{item.value4}} {{item.value5}} {{item.value6}} {{item.value7}} {{item.value8}} {{item.value9}} -->
-
+</table>

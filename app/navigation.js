@@ -22,7 +22,7 @@ angular.module('doggycloud')
             .state('customer-table', {
                 url: '/kunder',
                 templateUrl: 'app/partials/customerTable.html'
-                //controller: 'customerController'
+                controller: 'customerController'
                 //måske skal ovenstående controller ikke med, da den allerede er default i index.html
             })
 
