@@ -26,21 +26,19 @@ animal table
     </thead>
     <tbody ng-repeat="customer in localCustomers ">
     <tr ng-repeat="animals in customer.animals | animalSearch:searchBar : false" data-toggle="collapse" data-target="#{{customer._id}}">
-        <td>{{animals.name}}</td>
-        <td>{{animals.breed}}</td>
-        <td>{{animals.gender}}</td>
-        <td>{{animals.age}}</td>
-        <td>{{animals.inHeat}}</td>
-        <td>{{animals.bestAlone}}</td>
-        <td>{{animals.comments}}</td>
-
-
+        <td class="col-md-1 tableContent"><div>{{animals.name}}</div></td>
+        <td class="col-md-2 tableContent"><div>{{animals.breed}}</div></td>
+        <td class="col-md-1 tableConeten"><div>{{animals.gender}}</div></td>
+        <td class="col-md-1 tableContent"><div>{{animals.age}}</div></td>
+        <td class="col-md-1 tableContent"><div>{{animals.inHeat}}</div></td>
+        <td class="col-md-1 tableContent"><div>{{animals.bestAlone}}</div></td>
+        <td class="col-md-3 tableContent"><div>{{animals.comments}}</div></td>
     </tr>
     <tr id="{{customer._id}}" class="collapse customerCollapse">
-        <td><span class="collapseStyle">Name</span><hr>{{customer.name}}</td>
-        <td><span class="collapseStyle">Address</span><hr>{{customer.address}}</td>
-        <td><span class="collapseStyle">Telephone</span><hr>{{customer.telephone}}</td>
-        <td><span class="collapseStyle">Email</span><hr>{{customer.email}}</td>
+        <td><span class="collapseStyle">Name</span><hr><div class="collapseContent">{{customer.name}}</div></td>
+        <td><span class="collapseStyle tableContent">Address</span><hr><div class="collapseContent">{{customer.address}}</div></td>
+        <td><span class="collapseStyle">Telephone</span><hr><div class="collapseContent">{{customer.telephone}}</div></td>
+        <td><span class="collapseStyle">Email</span><hr><div class="collapseContent">{{customer.email}}</div></td>
     </tr>
     </tbody>
 

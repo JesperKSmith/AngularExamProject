@@ -7,6 +7,16 @@ controller("customerController",
 
         $scope.localCustomers = [];
 
+        $scope.editCustomer = function(customerToCopy) {
+            var customerToSend = angular.copy(customerToCopy);
+
+            console.log(customerToCopy);
+
+            $state.go("customer-form", {
+                customerParameter: customerToSend
+            });
+        };
+
         $scope.dummyCustomers = [
             {
                 name: "Torben",

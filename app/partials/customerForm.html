@@ -1,6 +1,9 @@
-<form novalidate name="customerForm" ng-submit="saveCustomer()" >
+<form novalidate name="customerForm"
+      ng-submit="saveCustomer()" >
+
     <div class="fontColoring">
         <div class="Name">
+            <label></label>
             <li>Kunde navn:</li>
             <input type="text" name="name" class="fieldText" required ng-model="customer.name" />
             <span class="fontError" ng-show="customerForm.name.$error.required && customerForm.$submitted">
@@ -19,8 +22,8 @@
 
         <div class="Phone">
             <li>Telefon nummer:</li>
-            <input class="fieldText" type="text" name="phone" required ng-model="customer.phone">
-            <span class="fontError" ng-show="customerForm.phone.$error.required && customerForm.$submitted">
+            <input class="fieldText" type="text" name="phone" required ng-model="customer.telephone">
+            <span class="fontError" ng-show="customerForm.telephone.$error.required && customerForm.$submitted">
                 Telefon nummer er påkrævet
             </span>
         </div>
@@ -41,4 +44,3 @@
 </form>
 
 <div ui-view></div>
-

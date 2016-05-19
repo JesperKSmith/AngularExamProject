@@ -68,19 +68,26 @@ angular.module("doggycloud").factory("customerApiService", function($q, $state, 
             new customerResource (customer)
                 .$delete(function (data) {
 
+                    console.log("her bliver der sendt anmodning til API");
+
                     for (var i = 0; i < customers.length; i++) {
 
-                        if (customers[i]._id === customers._id) {
+                        if (customers[i]._id === customer._id) {
+
+                            console.log("Her bliver customer fjernet fra lokal array");
 
                             customers.splice(i,1);
                         }
                     }
 
                     deferred.resolve("deleted");
+                    console.log("deleted");
                 }, function(error) {
                     deferred.reject(error);
+                    console.log("error");
                 });
-            $state.go("customer-table");
+            console.log("Denne vises altid når deleteCustomer bliver brugt");
+            //$state.go("customer-table");
             return deferred.promise;
         }
     };

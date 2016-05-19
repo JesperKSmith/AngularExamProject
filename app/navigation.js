@@ -8,9 +8,9 @@ angular.module('doggycloud')
 
         $stateProvider.state('customer-form', {
             url: '/kundeformular',
-            templateUrl: 'app/partials/customerForm.html'
-            //controller: 'newEditCustomerController'
-            //params: { customerParameter: null}
+            templateUrl: 'app/partials/customerForm.html',
+            controller: 'newEditCustomerController',
+            params: { customerParameter: null}
         })
             .state('animal-form', {
                 url: '/dyreformular',
@@ -21,8 +21,8 @@ angular.module('doggycloud')
 
             .state('customer-table', {
                 url: '/kunder',
-                templateUrl: 'app/partials/customerTable.html'
-                //controller: 'customerController'
+                templateUrl: 'app/partials/customerTable.html',
+                controller: 'customerController'
                 //måske skal ovenstående controller ikke med, da den allerede er default i index.html
             })
 
