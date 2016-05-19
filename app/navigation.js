@@ -8,9 +8,9 @@ angular.module('doggycloud')
 
         $stateProvider.state('customer-form', {
             url: '/kundeformular',
-            templateUrl: 'app/partials/customerForm.html'
-            //controller: 'newEditCustomerController'
-            //params: { customerParameter: null}
+            templateUrl: 'app/partials/customerForm.html',
+            controller: 'newEditCustomerController',
+            params: { customerParameter: null}
         })
             .state('animal-form', {
                 url: '/dyreformular',

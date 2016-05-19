@@ -1,6 +1,7 @@
-<form novalidate name="customerForm" ng-submit="saveCustomer()" >
+<form novalidate name="customerForm" ng-submit="addUpdateCustomer()" >
     <div class="fontColoring">
         <div class="Name">
+            <label-with-textfield label='Navn' name='name' errorCategory='Kunde navn' form='customerForm'>
             <li>Kunde navn:</li>
             <input type="text" name="name" class="fieldText" required ng-model="customer.name" />
             <span class="fontError" ng-show="customerForm.name.$error.required && customerForm.$submitted">
