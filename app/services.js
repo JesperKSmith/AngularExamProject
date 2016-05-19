@@ -72,7 +72,7 @@ angular.module("doggycloud").factory("customerApiService", function($q, $state, 
 
                     for (var i = 0; i < customers.length; i++) {
 
-                        if (customers[i]._id === customers._id) {
+                        if (customers[i]._id === customer._id) {
 
                             console.log("Her bliver customer fjernet fra lokal array");
 

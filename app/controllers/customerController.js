@@ -10,8 +10,10 @@ controller("customerController",
         $scope.editCustomer = function(customerToCopy) {
             var customerToSend = angular.copy(customerToCopy);
 
+            console.log(customerToCopy);
+
             $state.go("customer-form", {
-                customerParamater: customerToSend
+                customerParameter: customerToSend
             });
         };
 

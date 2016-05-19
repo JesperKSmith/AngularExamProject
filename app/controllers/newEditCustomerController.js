@@ -1,11 +1,13 @@
 angular.module("doggycloud")
     .controller("newEditCustomerController",
         function($scope, $state, $stateParams, $http, $resource, customerApiService) {
-            $scope.customer = {};
 
+            $scope.customer = {};
             console.log("customer controller");
 
             $scope.customer = $stateParams.customerParameter;
+
+            console.log($scope.customer);
 
             $scope.saveCustomer = function() {
                 if ($scope.customerForm.$valid) {
