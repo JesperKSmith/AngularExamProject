@@ -1,6 +1,6 @@
 angular.module("doggycloud")
     .controller("newEditCustomerController",
-        function($scope, $state, $stateParams, $http, $resource, customerApiService) {
+        function($scope, $state, $stateParams, customerApiService) {
 
             $scope.customer = {};
             console.log("customer controller");
@@ -11,17 +11,32 @@ angular.module("doggycloud")
 
             $scope.saveCustomer = function() {
                 if ($scope.customerForm.$valid) {
-                    console.log("save customer");
-                    customerApiService.addUpdateCustomer($scope.customer);
-                    $state.go("customer-table")
+
+                    customerApiService.addUpdateCustomer($scope.customer)
+                        .then(function (customersFromAPI) {
+
+                            $scope.$parent.localCustomers = customersFromAPI;
+                            $state.go("customer-table")
+
+                        });
                 } else {
                     console.log("customer form invalid")
                 }
             };
 
-            $scope.deleteCustomer = function(){
-                customerApiService.deleteCustomer($scope.customer);
-                $state.go("customer-table")
+            $scope.deleteCustomer = function() {
+                customerApiService.deleteCustomer($scope.customer)
+                    .then(function(data){
+
+                        $scope.$parent.localCustomers = data;
+                        $state.go("customer-table");
+
+                    }, function() {
+                        alert("delete failed")
+                    });
+
             };
+
+
 
         });
