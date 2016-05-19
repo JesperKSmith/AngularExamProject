@@ -1,6 +1,6 @@
 angular.module("doggycloud").
 controller("animalController",
-    function($scope, $state, $http, $resource) {
+    function($scope, $state) {
         $scope.animal = {};
 
         var today = new Date();

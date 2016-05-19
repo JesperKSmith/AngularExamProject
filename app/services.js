@@ -75,6 +75,7 @@ angular.module("doggycloud").factory("customerApiService", function($q, $state, 
             new customerResource (customer)
                 .$delete(function () {
 
+
                     customers.splice(customers.indexOf(customer),1);
                     deferred.resolve(customers);
 

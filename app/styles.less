@@ -63,6 +63,10 @@ hr {
 
 .searchBar {
   float: right;
+  padding-right: 0;
+  padding-left: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .tableContent div, .collapseContent {
@@ -83,4 +87,15 @@ hr {
 
 .glyphicon-info-sign {
   font-size: 1.4em;
+}
+
+.imgDoog {
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out;
+}
+.imgDoog:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  cursor: pointer;
 }
