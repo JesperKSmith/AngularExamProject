@@ -70,13 +70,17 @@ angular.module("doggycloud").factory("customerApiService", function($q, $state, 
 
         deleteCustomer: function (customer) {
 
-            var deferred = $q.defer();
-
             new customerResource (customer)
                 .$delete(function () {
 
-                    customers.splice(customers.indexOf(customer),1);
-                    deferred.resolve(customers);
+                    for (var i = 0; i < customers.length; i++) {
+
+                        if (customers[i]._id === customer._id) {
+
+                            customers.splice(i,1);
+
+                        }
+                    }
 
                 }, function(error) {
                     deferred.reject(error);
