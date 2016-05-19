@@ -20,6 +20,7 @@
 
     <script src="app/controllers/animalController.js"></script>
     <script src="app/controllers/customerController.js"></script>
+    <script src="app/controllers/newEditCustomerController.js"></script>
 
     <script src="app/filters.js"></script>
     <script src="app/navigation.js"></script>
@@ -27,7 +28,7 @@
 
 
 </head>
-<body>
+<body ng-controller="customerController">
 
 <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -71,7 +72,7 @@
 </nav>
 
 
-    <div ui-view=""></div>
+    <a ui-view=""></a>
     <!--Ovenstående redirecter til kunde view gennem navigation.js-->
 
 

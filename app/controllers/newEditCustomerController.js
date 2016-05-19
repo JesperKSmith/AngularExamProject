@@ -3,23 +3,23 @@ angular.module("doggycloud")
         function($scope, $state, $stateParams, $http, $resource, customerApiService) {
             $scope.customer = {};
 
+            console.log("customer controller");
+
             $scope.customer = $stateParams.customerParameter;
 
             $scope.saveCustomer = function() {
                 if ($scope.customerForm.$valid) {
-                    if ($stateParams.customerParameter === null) {
-                        // No customer id = new entry
-                        new $scope.customerApiService.customerResource // <-- this shit won't work! 
-                        //new $scope.$parent.customerResource($scope.customer).$save(function(data) {
-                        //    console.log("saved customer");
-                        //    $scope.$parent.receivedCustomers.push($scope.customer);
-                        //    $scope.$parent.receivedCustomers.reverse();
-                        //})
-                    }
-                    else {
-                        // customer id exists = update entry
-                    }
+                    console.log("save customer");
+                    customerApiService.addUpdateCustomer($scope.customer);
+                    $state.go("customer-table")
+                } else {
+                    console.log("customer form invalid")
                 }
-            }
+            };
 
-        })
+            $scope.deleteCustomer = function(){
+                customerApiService.deleteCustomer($scope.customer);
+                $state.go("customer-table")
+            };
+
+        });

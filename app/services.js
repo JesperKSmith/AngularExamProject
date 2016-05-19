@@ -80,7 +80,7 @@ angular.module("doggycloud").factory("customerApiService", function($q, $state, 
                 }, function(error) {
                     deferred.reject(error);
                 });
-            $state.go("customer-table");
+            //$state.go("customer-table");
             return deferred.promise;
         }
     };
