@@ -22,17 +22,19 @@ animal table
             <th>In Heat</th>
             <th>Best Alone</th>
             <th>Comments</th>
+            <th class="text-center">Info</th>
         </tr>
     </thead>
     <tbody ng-repeat="customer in localCustomers ">
-    <tr ng-repeat="animals in customer.animals | animalSearch:searchBar : false" data-toggle="collapse" data-target="#{{customer._id}}">
+    <tr class="infoColumn" ng-repeat="animals in customer.animals | animalSearch:searchBar : false" data-toggle="collapse" data-target="#{{customer._id}}" >
         <td class="col-md-1 tableContent"><div>{{animals.name}}</div></td>
         <td class="col-md-2 tableContent"><div>{{animals.breed}}</div></td>
         <td class="col-md-1 tableConeten"><div>{{animals.gender}}</div></td>
         <td class="col-md-1 tableContent"><div>{{animals.age}}</div></td>
         <td class="col-md-1 tableContent"><div>{{animals.inHeat}}</div></td>
         <td class="col-md-1 tableContent"><div>{{animals.bestAlone}}</div></td>
-        <td class="col-md-3 tableContent"><div>{{animals.comments}}</div></td>
+        <td class="col-md-2 tableContent"><div>{{animals.comments}}</div></td>
+        <td class="col-md-1 text-center infoColor"><div><button type="button" ng-click="editAnimal(animals)" class="btn btn-link"><i class="glyphicon glyphicon-info-sign"></i></button></div></td>
     </tr>
     <tr id="{{customer._id}}" class="collapse customerCollapse">
         <td><span class="collapseStyle">Name</span><hr><div class="collapseContent">{{customer.name}}</div></td>
