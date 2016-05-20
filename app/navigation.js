@@ -35,6 +35,16 @@ angular.module('doggycloud')
             .state('loading', {
                 url: '/loading',
                 templateUrl: 'app/partials/spinner.html'
+
+            })
+
+                    
+            .state('customer-details', {
+                url: '/kundeinfo',
+                templateUrl: 'app/partials/customerDetails.html',
+                controller: 'detailsController',
+                params: { customerParameter: null}
+
             })
 
     });

@@ -17,6 +17,13 @@ controller("customerController",
             });
         };
 
+        $scope.getDetails = function(customer) {
+
+            $state.go("customer-details", {
+                customerParameter: customer
+            });
+        };
+
         customerApiService.getCustomers()
             .then(function(customers) {
                 // if resolved
