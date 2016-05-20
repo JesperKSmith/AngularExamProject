@@ -19,14 +19,6 @@ h1 {
 }
 
 @media(max-width: 480px) {
-  h1 {
-    font-size: 14pt;
-  }
-  img {
-    margin-top: 15px;
-    max-width: 30px; /* you can use % */
-    max-height: 30px;
-  }
 
   .collapse {
     display: inline;
@@ -34,6 +26,10 @@ h1 {
 
   .dropdown {
     margin-top: 5px;
+    float: left;
+  }
+
+  .searchBar {
     float: left;
   }
 
@@ -63,6 +59,10 @@ hr {
 
 .searchBar {
   float: right;
+  padding-right: 0;
+  padding-left: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .tableContent div, .collapseContent {
@@ -83,4 +83,15 @@ hr {
 
 .glyphicon-info-sign {
   font-size: 1.4em;
+}
+
+.imgDoog {
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out;
+}
+.imgDoog:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  cursor: pointer;
 }

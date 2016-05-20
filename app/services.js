@@ -82,6 +82,8 @@ angular.module("doggycloud").factory("customerApiService", function($q, $state, 
                         }
                     }
 
+                    deferred.resolve(customers);
+
                 }, function(error) {
                     deferred.reject(error);
                     console.log(error);
