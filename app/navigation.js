@@ -32,4 +32,12 @@ angular.module('doggycloud')
                 //controller: 'animalController'
             })
 
+            .state('customer-details', {
+                url: '/kundeinfo',
+                templateUrl: 'app/partials/customerDetails.html',
+                controller: 'detailsController',
+                params: { customerParameter: null}
+
+            })
+
     });
