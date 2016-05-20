@@ -2,4 +2,15 @@ Kunde information
 
 <div ng-app="doggycloud" ng-controller="detailsController">
     {{customer.name}}
+
+    <div ng-repeat="animal in customer.animals">
+        {{animal.name}}
+        {{animal.breed}}
+        {{animal.gender}}
+        {{animal.age}}
+        {{animal.inHeat}}
+        {{animal.bestAlone}}
+        {{animal.comment}}
+    </div>
+
 </div>

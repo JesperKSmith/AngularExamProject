@@ -9,4 +9,5 @@ controller("detailsController",
 
         $scope.customer = $stateParams.customerParameter;
 
+        console.log($scope.customer);
     });
