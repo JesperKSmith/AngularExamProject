@@ -48,7 +48,7 @@ angular.module("doggycloud").factory("customerApiService", function($q, $state, 
                 new customerResource(customer)
                     .$update(function (data) {
 
-                        console.log("updating");
+                        console.log(customer);
                         for (var i = 0; i < customers.length; i++) {
 
                             if (customers[i]._id === customer._id) {
