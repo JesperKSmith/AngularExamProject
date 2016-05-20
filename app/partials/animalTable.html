@@ -1,7 +1,9 @@
 
 <div class="container-fluid">
 
-<div class="searchBar col-md-2">
+    <select ng-model="limitType" ng-options="item for item in limitTypeRange">Limit</select>
+
+    <div class="searchBar col-md-2">
     <input type="text" name="search" placeholder="Search.." class="form-control" ng-model="searchBar" />
 </div>
 
@@ -20,7 +22,7 @@
         </tr>
     </thead>
     <tbody ng-repeat="customer in localCustomers ">
-    <tr class="infoColumn" ng-repeat="animals in customer.animals | animalSearch:searchBar : false" data-toggle="collapse" data-target="#{{customer._id}}" >
+    <tr class="infoColumn" ng-repeat="animals in customer.animals | filter: { type: limitType} | animalSearch:searchBar : false" data-toggle="collapse" data-target="#{{customer._id}}" >
         <td class="col-md-1 tableContent"><div>{{animals.name}}</div></td>
         <td class="col-md-2 tableContent"><div>{{animals.breed}}</div></td>
         <td class="col-md-1 tableConeten"><div>{{animals.gender}}</div></td>

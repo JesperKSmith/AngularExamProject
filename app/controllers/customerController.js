@@ -4,6 +4,9 @@ controller("customerController",
 
         $scope.localCustomers = [];
 
+        $scope.limitType = "";
+        $scope.limitTypeRange = ["", "Dog", "Cat"];
+
         $scope.editCustomer = function(customerToCopy) {
             var customerToSend = angular.copy(customerToCopy);
 

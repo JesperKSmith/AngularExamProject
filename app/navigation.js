@@ -28,8 +28,13 @@ angular.module('doggycloud')
 
             .state('animal-table', {
                 url: '/dyr',
-                templateUrl: 'app/partials/animalTable.html',
+                templateUrl: 'app/partials/animalTable.html'
                 //controller: 'animalController'
+            })
+
+            .state('loading', {
+                url: '/loading',
+                templateUrl: 'app/partials/spinner.html'
             })
 
     });
