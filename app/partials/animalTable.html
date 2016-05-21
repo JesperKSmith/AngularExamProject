@@ -11,13 +11,13 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Breed</th>
-            <th>Gender</th>
-            <th>Age</th>
-            <th>In Heat</th>
-            <th>Best Alone</th>
-            <th>Comments</th>
+            <th>Navn</th>
+            <th>Race</th>
+            <th>Køn</th>
+            <th>Alder</th>
+            <th>I Løbetid</th>
+            <th>Bedst Alene</th>
+            <th>Kommentar</th>
             <th class="text-center">Info</th>
         </tr>
     </thead>
@@ -33,9 +33,9 @@
         <td class="col-md-1 text-center infoColor"><div><button type="button" ng-click="getDetails(customer)" class="btn btn-link"><i class="glyphicon glyphicon-info-sign"></i></button></div></td>
     </tr>
     <tr id="{{customer._id}}" class="collapse customerCollapse">
-        <td colspan="2"><span class="collapseStyle">Name</span><hr><div class="collapseContent">{{customer.name}}</div></td>
-        <td colspan="2"><span class="collapseStyle tableContent">Address</span><hr><div class="collapseContent">{{customer.address}}</div></td>
-        <td colspan="2"><span class="collapseStyle">Telephone</span><hr><div class="collapseContent">{{customer.telephone}}</div></td>
+        <td colspan="2"><span class="collapseStyle">Navn</span><hr><div class="collapseContent">{{customer.name}}</div></td>
+        <td colspan="2"><span class="collapseStyle tableContent">Adresse</span><hr><div class="collapseContent">{{customer.address}}</div></td>
+        <td colspan="2"><span class="collapseStyle">Telefon</span><hr><div class="collapseContent">{{customer.telephone}}</div></td>
         <td colspan="2"><span class="collapseStyle">Email</span><hr><div class="collapseContent">{{customer.email}}</div></td>
     </tr>
     </tbody>
