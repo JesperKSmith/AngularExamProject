@@ -24,7 +24,7 @@
                     </tr>
                     </tbody>
                 </table>
-                <div class="buttonAllignment"><button type="button" class="btn btnEditCustomer" ng-click="editCustomer(customer)">Rediger kunde</button></div>
+                <div class="buttonAllignment"><button type="button" class="btn btnEditCustomer" ng-click="editCustomer(customer)"><span>Rediger kunde</span></button></div>
                 <h3>Dyreinfo  <span class="glyphicon glyphicon-hand-down"></span></h3>
                 <div ng-repeat="animal in customer.animals">
                 <table class="table table-hover" >
@@ -63,7 +63,7 @@
                     </tr>
                     </tbody>
                 </table>
-                    <div class="buttonAllignment"><button type="button" class="btn btnEditAnimal" ng-click="editAnimal(animal)">Rediger {{animal.name}}</button></div>
+                    <div class="buttonAllignment"><button type="button" class="btn btnEditAnimal" ng-click="editAnimal(animal)"><span>Rediger {{animal.name}}</span></button></div>
                 </div>
             </div>
         </div>
