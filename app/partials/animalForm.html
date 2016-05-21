@@ -1,78 +1,92 @@
-animal form
-<form novalidate name="animalForm" ng-submit="saveAnimal()" >
-    <div class="fontColoring">
-        <div class="Name">
-            <li>Dyrets navn:</li>
-            <input type="text" name="name" class="fieldText" required ng-model="animal.name" />
-            <span class="fontError" ng-show="animalForm.name.$error.required && animalForm.$submitted">
-                "Dyrets navn" er påkrævet
-            </span>
-        </div>
+<div class="col-md-3"></div>
+<div class="col-md-6">
+    <div class="jumbotron">
+        <div class="container" id="animalForm">
+            <form novalidate name="animalForm"
+                  ng-submit="saveAnimal()" >
+                <div class="container">
+                    <div class="col-md-5">
+                        <div class="Name">
+                            <h4><label class="label label-pill label-success">Dyrets navn:</label></h4>
+                            <input type="text" name="name" class="fieldText" required ng-model="animal.name" />
+                            <span class="fontError" ng-show="animalForm.name.$error.required && animalForm.$submitted">
+                                "Dyrets navn" er påkrævet
+                            </span>
+                        </div>
 
-        <div class="Breed">
-            <li>Race:</li>
-            <input class="fieldText" type="text" name="breed" required ng-model="animal.breed">
-            <span class="fontError" ng-show="animalForm.breed.$error.required && animalForm.$submitted">
-                "Race" er påkrævet
-            </span>
-        </div>
+                        <div class="Breed">
+                            <h4><label class="label label-pill label-success">Race:</label></h4>
+                            <input class="fieldText" type="text" name="breed" required ng-model="animal.breed">
+                            <span class="fontError" ng-show="animalForm.breed.$error.required && animalForm.$submitted">
+                                "Race" er påkrævet
+                            </span>
+                        </div>
 
-        <div class="Gender">
-            <li>Køn:</li>
-            <input class="fieldText" type="text" name="gender" required ng-model="animal.gender">
-            <span class="fontError" ng-show="animalForm.gender.$error.required && animalForm.$submitted">
-                "Køn" er påkrævet
-            </span>
-        </div>
+                        <div class="Gender">
+                            <h4><label class="label label-pill label-success">Køn:</label></h4>
+                            <input class="fieldText" type="text" name="gender" required ng-model="animal.gender">
+                            <span class="fontError" ng-show="animalForm.gender.$error.required && animalForm.$submitted">
+                                "Køn" er påkrævet
+                            </span>
+                        </div>
 
-        <div class="Age">
-            <li>Alder:</li>
-            <input class="fieldText" type="text" name="age" required ng-model="animal.age">
-            <span class="fontError" ng-show="animalForm.age.$error.required && animalForm.$submitted">
-                "Alder" er påkrævet
-            </span>
-        </div>
-        <!--name: "Fido", breed: "Goldeno Retrievo", gender: "Male",-->
-        <!--age: 5, inHeat: "Yes", lastVaccine: today,-->
-        <!--bestAlone: "No", pictures: "N/A", comments: "Good dog"-->
-        <div class="InHeat">
-            <li>I løbetid:</li>
-            <input class="fieldText" type="text" name="inHeat" required ng-model="animal.inHeat">
-            <span class="fontError" ng-show="animalForm.inHeat.$error.required && animalForm.$submitted">
-                "I løbetid" er påkrævet
-            </span>
-        </div>
+                        <div class="Age">
+                            <h4><label class="label label-pill label-success">Alder:</label></h4>
+                            <input class="fieldText" type="text" name="age" required ng-model="animal.age">
+                            <span class="fontError" ng-show="animalForm.age.$error.required && animalForm.$submitted">
+                                "Alder" er påkrævet
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5 leftInputColumn">
+                        <div class="InHeat">
+                            <h4><label class="label label-pill label-success">I løbetid:</label></h4>
+                            <input class="fieldText" type="text" name="inHeat" required ng-model="animal.inHeat">
+                            <span class="fontError" ng-show="animalForm.inHeat.$error.required && animalForm.$submitted">
+                                "I løbetid" er påkrævet
+                            </span>
+                        </div>
 
-        <div class="BestAlone">
-            <li>Bedst alene:</li>
-            <input class="fieldText" type="text" name="bestAlone" required ng-model="animal.bestAlone">
-            <span class="fontError" ng-show="animalForm.bestAlone.$error.required && animalForm.$submitted">
-                "Bedst alene" er påkrævet
-            </span>
-        </div>
 
-        <div class="Pictures">
-            <li>Billeder:</li>
-            <input class="fieldText" type="text" name="pictures" required ng-model="animal.pictures">
-            <!--<span class="fontError" ng-show="animalForm.pictures.$error.required && animalForm.$submitted">-->
-                <!--"Billeder" er påkrævet-->
-            <!--</span>-->
-        </div>
+                        <div class="BestAlone">
+                            <h4><label class="label label-pill label-success">Bedst alene:</label></h4>
+                            <input class="fieldText" type="text" name="bestAlone" required ng-model="animal.bestAlone">
+                            <span class="fontError" ng-show="animalForm.bestAlone.$error.required && animalForm.$submitted">
+                                "Bedst alene" er påkrævet
+                            </span>
+                        </div>
 
-        <div class="Comments">
-            <li>Kommentare:</li>
-            <!--<input class="fieldText" type="textfield" name="comments" required ng-model="animal.comments">-->
-            <textarea class="fieldText" name="comments" rows="10" cols="21" ng-model="animal.comments"></textarea>
-            <!--<span class="fontError" ng-show="animalForm.comments.$error.required && animalForm.$submitted">-->
-                <!--"I løbetid" er påkrævet-->
-            <!--</span>-->
+                        <div class="Pictures">
+                            <h4><label class="label label-pill label-success">Billeder:</label></h4>
+                            <input class="fieldText" type="text" name="pictures" required ng-model="animal.pictures">
+                            <!--<span class="fontError" ng-show="animalForm.pictures.$error.required && animalForm.$submitted">-->
+                            <!--"Billeder" er påkrævet-->
+                            <!--</span>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="Comments">
+                            <h4><label class="label label-pill label-success">Kommentar:</label></h4>
+                            <!--<input class="fieldText" type="textfield" name="comments" required ng-model="animal.comments">-->
+                            <textarea class="fieldText" name="comments" rows="5" cols="62" ng-model="animal.comments"></textarea>
+                            <!--<span class="fontError" ng-show="animalForm.comments.$error.required && animalForm.$submitted">-->
+                            <!--"I løbetid" er påkrævet-->
+                            <!--</span>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="buttonAllignment formButtons col-md-12">
+                    <button type="submit" class="btn btnEditAnimal glyphicon glyphicon-ok" value="Submit"> Gem</button>
+                    <button ng-click="deleteCustomer()" type="button" class="btn btnDelete glyphicon glyphicon-trash"> Slet</button>
+                </div>
+            </form>
         </div>
     </div>
-    <p>
-        <br>
-        <button type="submit" class="btn btn-info centering glyphicon glyphicon-ok" value="Submit"> Opret Dyr</button>
-        <button ng-click="deleteCustomer()" type="button" class="btn btn-danger glyphicon glyphicon-trash"> Slet Dyr </button>
-</form>
+</div>
+<div class="col-md-3"></div>
 
 <div ui-view></div>
 
