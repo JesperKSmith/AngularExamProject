@@ -94,3 +94,65 @@ hr {
   transform: rotate(360deg);
   cursor: pointer;
 }
+
+.jumbotron {
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+#detailsTables {
+  padding-left: 30%;
+  padding-right: 30%;
+  .label-info {
+    background: #17805B;
+  }
+  .label-success {
+    background: #364D5C;
+  }
+}
+
+.labelAllignment {
+  text-align: right;
+}
+
+.button-creator(@color) {
+  background: @color;
+  box-shadow: 0px 3px 0px darken(@color, 8%);
+
+  &:hover {
+    color: darken(#fafafa, 20%);
+  }
+
+  &:active {
+    box-shadow: 0px 1px 0px darken(@color, 8%);
+    position: relative;
+    top: 2px;
+  }
+}
+
+.btn {
+  padding: 10px;
+  border: none;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  color: #fafafa;
+
+  &.btnEditCustomer {
+    .button-creator(#17805B);
+  }
+  &.btnEditAnimal {
+    .button-creator(#364D5C);
+  }
+
+}
+
+#detailsTables {
+  h3, .buttonAllignment {
+    text-align: center;
+  }
+}
+
+.buttonAllignment {
+  padding-bottom: 20px;
+}

@@ -1,16 +1,70 @@
-Kunde information
+<div class="col-md-12">Kunde information</div>
 
-<div ng-app="doggycloud" ng-controller="detailsController">
-    {{customer.name}}
-
-    <div ng-repeat="animal in customer.animals">
-        {{animal.name}}
-        {{animal.breed}}
-        {{animal.gender}}
-        {{animal.age}}
-        {{animal.inHeat}}
-        {{animal.bestAlone}}
-        {{animal.comment}}
+<div class="col-md-1"></div>
+<div class="col-md-10">
+    <div class="jumbotron">
+        <div class="container">
+            <div ng-app="doggycloud" ng-controller="detailsController" id="detailsTables">
+                <h3>Kundeinfo  <span class="glyphicon glyphicon-hand-down"></span></h3>
+                <table class="customerDetails table table-hover">
+                    <tbody>
+                    <tr>
+                        <td class="col-md-1 labelAllignment"><h4><span class="label label-pill label-info">Navn :</span></h4></td>
+                        <td class="col-md-5"><h4> {{customer.name}}</h4></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-1 labelAllignment"><h4><span class="label label-pill label-info">Adresse :</span></h4></td>
+                        <td class="col-md-5"><h4> {{customer.address}}</h4></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-1 labelAllignment"><h4><span class="label label-pill label-info">Telefon :</span></h4></td>
+                        <td class="col-md-5"><h4> {{customer.telephone}}</h4></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-1 labelAllignment"><h4><span class="label label-pill label-info">Email :</span></h4></td>
+                        <td class="col-md-5"><h4> {{customer.email}}</h4></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="buttonAllignment"><button type="button" class="btn btnEditCustomer" ng-click="editCustomer(customer)">Rediger kunde</button></div>
+                <h3>Dyreinfo  <span class="glyphicon glyphicon-hand-down"></span></h3>
+                <div ng-repeat="animal in customer.animals">
+                <table class="table table-hover" >
+                    <tbody>
+                    <tr>
+                        <td class="col-md-1 labelAllignment"><h4><span class="label label-pill label-success">Navn :</span></h4></td>
+                        <td class="col-md-5"><h4>{{animal.name}}</h4></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-1 labelAllignment"><h4><span class="label label-pill label-success">Race :</span></h4></td>
+                        <td class="col-md-5"><h4> {{animal.breed}}</h4></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-1 labelAllignment"><h4><span class="label label-pill label-success">Køn :</span></h4></td>
+                        <td class="col-md-5"><h4> {{animal.gender}}</h4></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-1 labelAllignment"><h4><span class="label label-pill label-success">Alder :</span></h4></td>
+                        <td class="col-md-5"><h4> {{animal.age}}</h4></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-1 labelAllignment"><h4><span class="label label-pill label-success">I løbetid :</span></h4></td>
+                        <td class="col-md-5"><h4> {{animal.inHeat}}</h4></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-1 labelAllignment"><h4><span class="label label-pill label-success">Bedst alene :</span></h4></td>
+                        <td class="col-md-5"><h4> {{animal.bestAlone}}</h4></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-1 labelAllignment"><h4><span class="label label-pill label-success">Kommentar :</span></h4></td>
+                        <td class="col-md-5"><h4> {{animal.comment}}</h4></td>
+                    </tr>
+                    </tbody>
+                </table>
+                    <div class="buttonAllignment"><button type="button" class="btn btnEditAnimal" ng-click="editAnimal(animal)">Rediger {{animal.name}}</button></div>
+                </div>
+            </div>
+        </div>
     </div>
-
 </div>
+<div class="col-md-1"></div>
