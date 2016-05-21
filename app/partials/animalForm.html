@@ -10,7 +10,7 @@
                             <h4><label class="label label-pill label-success">Dyrets navn:</label></h4>
                             <input type="text" name="name" class="fieldText" required ng-model="animal.name" />
                             <span class="fontError" ng-show="animalForm.name.$error.required && animalForm.$submitted">
-                                "Dyrets navn" er påkrævet
+                                <br>"Dyrets navn" er påkrævet
                             </span>
                         </div>
 
@@ -18,7 +18,7 @@
                             <h4><label class="label label-pill label-success">Race:</label></h4>
                             <input class="fieldText" type="text" name="breed" required ng-model="animal.breed">
                             <span class="fontError" ng-show="animalForm.breed.$error.required && animalForm.$submitted">
-                                "Race" er påkrævet
+                                <br>"Race" er påkrævet
                             </span>
                         </div>
 
@@ -26,7 +26,7 @@
                             <h4><label class="label label-pill label-success">Køn:</label></h4>
                             <input class="fieldText" type="text" name="gender" required ng-model="animal.gender">
                             <span class="fontError" ng-show="animalForm.gender.$error.required && animalForm.$submitted">
-                                "Køn" er påkrævet
+                                <br>"Køn" er påkrævet
                             </span>
                         </div>
 
@@ -34,7 +34,7 @@
                             <h4><label class="label label-pill label-success">Alder:</label></h4>
                             <input class="fieldText" type="text" name="age" required ng-model="animal.age">
                             <span class="fontError" ng-show="animalForm.age.$error.required && animalForm.$submitted">
-                                "Alder" er påkrævet
+                                <br>"Alder" er påkrævet
                             </span>
                         </div>
                     </div>
@@ -42,19 +42,19 @@
                     <div class="col-md-5">
                         <div class="Type">
                             <h4><label class="label label-pill label-success">Vælg type</label></h4>
-                            <select type="text" class="form-control" required ng-model="animal.type">
+                            <select type="text" class="fieldText" name="type" required ng-model="animal.type">
                                 <option>Cat</option>
                                 <option>Dog</option>
                             </select>
                             <span class="fontError" ng-show="animalForm.type.$error.required && animalForm.$submitted">
-                                "Type" er påkrævet
+                                <br>"Type" er påkrævet
                             </span>
                         </div>
                         <div class="InHeat">
                             <h4><label class="label label-pill label-success">I løbetid:</label></h4>
                             <input class="fieldText" type="text" name="inHeat" required ng-model="animal.inHeat">
                             <span class="fontError" ng-show="animalForm.inHeat.$error.required && animalForm.$submitted">
-                                "I løbetid" er påkrævet
+                                <br>"I løbetid" er påkrævet
                             </span>
                         </div>
 
@@ -63,7 +63,7 @@
                             <h4><label class="label label-pill label-success">Bedst alene:</label></h4>
                             <input class="fieldText" type="text" name="bestAlone" required ng-model="animal.bestAlone">
                             <span class="fontError" ng-show="animalForm.bestAlone.$error.required && animalForm.$submitted">
-                                "Bedst alene" er påkrævet
+                                <br>"Bedst alene" er påkrævet
                             </span>
                         </div>
 
