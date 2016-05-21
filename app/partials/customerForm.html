@@ -1,46 +1,64 @@
-<form novalidate name="customerForm"
-      ng-submit="saveCustomer()" >
+<div class="col-md-3"></div>
+<div class="col-md-6">
+    <div class="jumbotron">
+        <div class="container" id="costumerForm">
+            <form novalidate name="customerForm"
+                  ng-submit="saveCustomer()" >
+                <div class="fontColoring">
+                    <div class="Name">
+                        <h3><label class="label label-pill label-info">Navn:</label></h3>
+                        <div class="formGlyphs inner-addon left-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        <input id="formGlyphs" type="text" name="name" class="fieldText" required ng-model="customer.name" placeholder="..." />
+                        </div>
+                        <span class="fontError" ng-show="customerForm.name.$error.required && customerForm.$submitted">
+                            Kunde navn er påkrævet
+                        </span>
+                    </div>
 
-    <div class="fontColoring">
-        <div class="Name">
-            <label></label>
-            <li>Kunde navn:</li>
-            <input type="text" name="name" class="fieldText" required ng-model="customer.name" />
-            <span class="fontError" ng-show="customerForm.name.$error.required && customerForm.$submitted">
-                Kunde navn er påkrævet
-            </span>
+                    <div class="Address">
+                        <h3><label class="label label-pill label-info">Adresse:</label></h3>
+                        <div class="noteText">Eksempel: Nørrebrogade 24, st.th, 2450 København K</div>
+                        <div class="formGlyphs inner-addon left-addon">
+                            <i class="glyphicon glyphicon-home"></i>
+                        <input id="formGlyphs" class="fieldText" type="text" name="address" required ng-model="customer.address" placeholder="..."/>
+                        </div>
+                        <span class="fontError" ng-show="customerForm.address.$error.required && customerForm.$submitted">
+                            Adresse er påkrævet
+                        </span>
+                    </div>
+
+                    <div class="Phone">
+                        <h3><label class="label label-pill label-info">Telefon:</label></h3>
+                        <div class="formGlyphs inner-addon left-addon">
+                            <i class="glyphicon glyphicon-phone-alt"></i>
+                        <input id="formGlyphs" class="fieldText" type="text" name="phone" required ng-model="customer.telephone" placeholder="..."/>
+                        </div>
+                        <span class="fontError" ng-show="customerForm.telephone.$error.required && customerForm.$submitted">
+                            Telefon nummer er påkrævet
+                        </span>
+                    </div>
+
+                    <div class="Email">
+                        <h3><label class="label label-pill label-info">Email:</label></h3>
+                        <div class="formGlyphs inner-addon left-addon">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                        <input id="formGlyphs" class="fieldText" type="text" name="email" required ng-model="customer.email" placeholder="..."/>
+                        </div>
+                        <span class="fontError" ng-show="customerForm.email.$error.required && customerForm.$submitted">
+                            E-Mail er påkrævet
+                        </span>
+                    </div>
+
+                </div>
+                <div class="buttonAllignment formButtons">
+                    <button type="submit" class="btn btnEditCustomer glyphicon glyphicon-ok" value="Submit"> Gem</button>
+                    <button ng-click="deleteCustomer()" type="button" class="btn btnDelete glyphicon glyphicon-trash"> Slet</button>
+                </div>
+            </form>
         </div>
-
-        <div class="Address">
-            <p>Adresse:</p>
-            <div class="noteText">Eksempel: Nørrebrogade 24, st.th, 2450 København K</div>
-            <input class="fieldText" type="text" name="address" required ng-model="customer.address">
-            <span class="fontError" ng-show="customerForm.address.$error.required && customerForm.$submitted">
-                Adresse er påkrævet
-            </span>
-        </div>
-
-        <div class="Phone">
-            <li>Telefon nummer:</li>
-            <input class="fieldText" type="text" name="phone" required ng-model="customer.telephone">
-            <span class="fontError" ng-show="customerForm.telephone.$error.required && customerForm.$submitted">
-                Telefon nummer er påkrævet
-            </span>
-        </div>
-
-        <div class="Email">
-            <li>E-Mail</li>
-            <input class="fieldText" type="text" name="email" required ng-model="customer.email">
-            <span class="fontError" ng-show="customerForm.email.$error.required && customerForm.$submitted">
-                E-Mail er påkrævet
-            </span>
-        </div>
-
     </div>
-    <p>
-        <br>
-        <button type="submit" class="btn btn-info centering glyphicon glyphicon-ok" value="Submit"> Opret Kunde</button>
-        <button ng-click="deleteCustomer()" type="button" class="btn btn-danger glyphicon glyphicon-trash"> Slet Kunde </button>
-</form>
+</div>
+<div class="col-md-3"></div>
 
 <div ui-view></div>
