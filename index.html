@@ -64,9 +64,10 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opret <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a ui-sref="customer-form">Kunder</a></li>
-                        <li><a ui-sref="animal-form">Dyr</a></li>
+                        <li><a ui-sref="customer-form" ui-sref-opts="{ inherit: false }">Kunder</a></li>
+                        <li><a ui-sref="animal-form" ui-sref-opts="{ inherit: false }">Dyr</a></li>
                         <li><a>Ansatte</a></li>
+                        <!--brug ovenstående syntax til ansatta også for ikke at medarve stateParams-->
                     </ul>
                 </li>
             </ul>
