@@ -7,6 +7,11 @@
                 <div class="container">
                     <div class="col-md-5">
                         <div class="Name">
+                            <h4><label class="label label-pill label-success">Oprettes på kunden: {{customer.name}}</label></h4>
+                        </div>
+                        <br><br><br>
+
+                        <div class="Name">
                             <h4><label class="label label-pill label-success">Dyrets navn:</label></h4>
                             <input type="text" name="name" class="fieldText" required ng-model="animal.name" />
                             <span class="fontError" ng-show="animalForm.name.$error.required && animalForm.$submitted">
@@ -70,9 +75,9 @@
                         <div class="Pictures">
                             <h4><label class="label label-pill label-success">Billeder:</label></h4>
                             <input class="fieldText" type="text" name="pictures" required ng-model="animal.pictures">
-                            <!--<span class="fontError" ng-show="animalForm.pictures.$error.required && animalForm.$submitted">-->
-                            <!--"Billeder" er påkrævet-->
-                            <!--</span>-->
+                            <span class="fontError" ng-show="animalForm.pictures.$error.required && animalForm.$submitted">
+                            "Billeder" er påkrævet
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -82,15 +87,15 @@
                             <h4><label class="label label-pill label-success">Kommentar:</label></h4>
                             <!--<input class="fieldText" type="textfield" name="comments" required ng-model="animal.comments">-->
                             <textarea class="fieldText" name="comments" rows="5" cols="62" ng-model="animal.comments"></textarea>
-                            <!--<span class="fontError" ng-show="animalForm.comments.$error.required && animalForm.$submitted">-->
-                            <!--"I løbetid" er påkrævet-->
-                            <!--</span>-->
+                            <span class="fontError" ng-show="animalForm.comments.$error.required && animalForm.$submitted">
+                            "I løbetid" er påkrævet
+                            </span>
                         </div>
                     </div>
                 </div>
                 <div class="buttonAllignment formButtons col-md-12">
                     <button type="submit" class="btn btnEditAnimal glyphicon glyphicon-ok" value="Submit" enter-to-submit="submitForm()"><span> Gem</span></button>
-                    <button ng-click="deleteCustomer()" type="button" class="btn btnDelete glyphicon glyphicon-trash"><span> Slet</span></button>
+                    <button ng-click="deleteCustomerAnimal()" type="button" class="btn btnDelete glyphicon glyphicon-trash"><span> Slet</span></button>
                 </div>
             </form>
         </div>

@@ -11,16 +11,15 @@ angular.module("doggycloud")
 
             $scope.saveCustomer = function() {
                 if ($scope.customerForm.$valid) {
-
                     customerApiService.addUpdateCustomer($scope.customer)
                         .then(function (customersFromAPI) {
-
                             $scope.$parent.localCustomers = customersFromAPI;
                             $state.go("customer-table")
 
                         });
                 } else {
-                    console.log("customer form invalid")
+                    console.log("customer form invalid");
+                    console.log($scope.customerForm);
                 }
             };
 

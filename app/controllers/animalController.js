@@ -1,7 +1,15 @@
 angular.module("doggycloud").
 controller("animalController",
-    function($scope, $state) {
-        $scope.animal = {};
+    function($scope, $state, customerApiService) {
+
+        $scope.editCustomerAnimal = function(customerToCopy, animalToCopy) {
+            var customerToSend = angular.copy(customerToCopy);
+            var animalToSend = angular.copy(animalToCopy);
+            $state.go("animal-form", {
+                customerParameter: customerToSend,
+                animalParameter: animalToSend
+            });
+        };
 
         var today = new Date();
         $scope.dummyAnimals = [

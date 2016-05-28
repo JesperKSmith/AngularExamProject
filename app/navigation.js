@@ -16,9 +16,9 @@ angular.module('doggycloud')
 
             .state('animal-form', {
                 url: '/dyreformular',
-                templateUrl: 'app/partials/animalForm.html'
-                //controller: 'newEditAnimalController'
-                //params: { animalParameter: null}
+                templateUrl: 'app/partials/animalForm.html',
+                controller: 'newEditAnimalController',
+                params: { customerParameter: null, animalParameter: null }
             })
 
             .state('customer-table', {
@@ -29,7 +29,6 @@ angular.module('doggycloud')
             .state('animal-table', {
                 url: '/dyr',
                 templateUrl: 'app/partials/animalTable.html'
-                //controller: 'animalController'
             })
 
             .state('loading', {

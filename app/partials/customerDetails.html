@@ -25,10 +25,16 @@
                     </tbody>
                 </table>
                 <div class="buttonAllignment"><button type="button" class="btn btnEditCustomer" ng-click="editCustomer(customer)"><span>Rediger kunde</span></button></div>
+                <div class="buttonAllignment" ng-controller="animalController"><button type="button" class="btn btnEditAnimal" ng-click="editCustomerAnimal(customer, animal)"><span>Tilføj nyt dyr på {{customer.name}}</span></button></div>
+
                 <h3>Dyreinfo  <span class="glyphicon glyphicon-hand-down"></span></h3>
                 <div ng-repeat="animal in customer.animals">
                 <table class="table table-hover" >
                     <tbody>
+                    <tr>
+                        <td class="col-md-1 labelAllignment"><h4><span class="label label-pill label-success">ID :</span></h4></td>
+                        <td class="col-md-5"><h4>{{animal.animalId}}</h4></td>
+                    </tr>
                     <tr>
                         <td class="col-md-1 labelAllignment"><h4><span class="label label-pill label-success">Navn :</span></h4></td>
                         <td class="col-md-5"><h4>{{animal.name}}</h4></td>
@@ -63,7 +69,8 @@
                     </tr>
                     </tbody>
                 </table>
-                    <div class="buttonAllignment"><button type="button" class="btn btnEditAnimal" ng-click="editAnimal(animal)"><span>Rediger {{animal.name}}</span></button></div>
+                    <div class="buttonAllignment" ng-controller="animalController"><button type="button" class="btn btnEditAnimal" ng-click="editCustomerAnimal(customer, animal)"><span>Rediger {{animal.name}}</span></button></div>
+
                 </div>
             </div>
         </div>
